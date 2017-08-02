@@ -17,7 +17,13 @@
   </div>
   <div class="form-group form-group-inline">
     <%= f.label :welcomes %>
-    <%= f.select :welcomes, [['All'], ['Women'], ['Men']] %>
+    <!--<ul class="list-inline">-->
+      <!--<li>-->
+        <!--<input type="checkbox" class="custom-checkbox" id="w-women-check" name="Women" value="Women" onclick="welcomesClick('women')">-->
+        <!--<label for="w-women-check">Women</label>-->
+      <!--</li>-->
+    <!--</ul>-->
+    <%= f.select :welcomes, [['All'], ['Women'], [' Men'], ['Transgender'], ['Children'], ['Youth'], ['Adults'], ['Seniors']] %>
   </div>
   <hr>
 
@@ -524,6 +530,7 @@ var lcheck;
 // var tscheck;
 var finalservices = [];
 var finalsuitability = [];
+var finalwelcomes = [];
 
 function chclicked(){
  var index;
@@ -693,6 +700,13 @@ function lclicked(){
   document.getElementById('facility_services').value = finalservices.join(' ');
 };
 
+function welcomesClicked(param) {
+    var index;
+    if(downcase(param) === 'women') {
+        finalservices.push('women');
+    }
+}
+
 $(document).ready(function(){
     sclicked();
     fclicked();
@@ -701,6 +715,7 @@ $(document).ready(function(){
     tclicked();
     aclicked();
     lclicked();
+    welcomesClicked();
 });
 
 var monhours = document.getElementById("mon-hours");

@@ -10,13 +10,13 @@
   <p><%=@facility.welcomes %></p>
 <div class="inset" id="suitability">
   <ul>
-    <% if isWelcome("female", @facility) %>
+    <% if isWelcome("women", @facility) %>
         <li>
           <i class="linkvan-icon"><%= inline_svg('icons/female.svg', size: '35px') %></i>
           <p>Female</p>
         </li>
     <% end %>
-    <% if isWelcome("male", @facility) %>
+    <% if isWelcome(" men", @facility) %>
         <li>
           <i class="linkvan-icon"><%= inline_svg('icons/male.svg', size: '35px') %></i>
           <p>Male</p>
